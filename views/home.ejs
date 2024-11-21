@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="icon" href="/favicon.png" />
+    <style>
+      input[type="checkbox"]:checked::before {
+        content: "✓";
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        color: #000;
+        font-size: 1rem;
+        font-weight: bold;
+      }
+    </style>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+      tailwind.config = {
+        theme: {
+          extend: {
+            colors: {
+              primary: "#03081D",
+              secondary: "#080e24",
+              tertiary: "#1E2231",
+              accent: "#60F9FE",
+              green: "#00FF88",
+              textcolor: "#949BA7",
+            },
+            fontFamily: {
+              hacker: ["'Courier New'", "monospace"],
+            },
+          },
+        },
+      };
+      function myFunction() {
+        var x = document.getElementById("password");
+        if (x.type === "password") {
+          x.type = "text";
+        } else {
+          x.type = "password";
+        }
+      }
+    </script>
+    <title>Pizza4Ever</title>
+  </head>
+  <body class="bg-primary font-hacker text-textcolor">
+    <h2
+      class="absolute uppercase top-[10%] left-1/2 transform -translate-x-1/2 -translate-y-1/2 text-accent text-2xl font-black animate-pulse"
+    >
+      Welcome to Pizza4Ever
+    </h2>
+
+    <div class="h-screen w-full flex justify-center items-center">
+      <div
+        class="bg-secondary bg-opacity-60 h-3/4 w-3/4 flex shadow-lg rounded-lg overflow-hidden"
+      >
+        <form
+          class="flex flex-col justify-center items-center w-1/2 px-8 space-y-4"
+          action="/login"
+          method="post"
+        >
+          <h1 class="text-accent text-2xl mb-2">Sign In</h1>
+          <% if (typeof error !== "undefined") { %>
+          <p class="text-red-500 text-sm mb-2"><%= error %></p>
+          <% } %>
+          <input
+            type="text"
+            name="username"
+            id="username"
+            placeholder="Username"
+            class="w-1/2 h-12 bg-tertiary text-textcolor p-3 rounded-lg shadow focus:outline-none focus:ring-2 focus:ring-accent"
+          />
+          <input
+            type="password"
+            name="password"
+            placeholder="Password"
+            id="password"
+            class="w-1/2 h-12 bg-tertiary text-textcolor p-3 rounded-lg shadow focus:outline-none focus:ring-2 focus:ring-accent"
+          />
+          <div class="flex items-center space-x-3 mt-4">
+            <input
+              type="checkbox"
+              id="show-password"
+              onclick="myFunction()"
+              class="appearance-none w-5 h-5 bg-tertiary border border-accent rounded-md checked:bg-accent checked:text-primary focus:outline-none focus:ring-2 focus:ring-accent cursor-pointer relative"
+            />
+            <label
+              for="show-password"
+              class="text-textcolor cursor-pointer select-none tracking-widest"
+            >
+              Show Password
+            </label>
+          </div>
+
+          <button
+            class="w-1/4 h-10 bg-accent text-primary font-bold rounded-full shadow-md hover:bg-green-500 transition duration-200"
+          >
+            Login
+          </button>
+        </form>
+
+        <div
+          class="w-1/2 bg-cover bg-center relative"
+          style="background-image: url('/image.png')"
+        ></div>
+        <!-- PS: Hint 50 65 70 70 65 72 6f 6e 69 50 6f 74 74 65 72 -->
+      </div>
+    </div>
+  </body>
+</html>

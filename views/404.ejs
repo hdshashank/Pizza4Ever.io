@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <link rel="icon" href="/favicon.png" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+      tailwind.config = {
+        theme: {
+          extend: {
+            colors: {
+              primary: "#0d0d0d",
+              green: "#00FF88",
+              red: "#FF4F4F",
+              textcolor: "#60F9FE",
+            },
+            fontFamily: {
+              hacker: ["'Courier New'", "monospace"],
+            },
+          },
+        },
+      };
+    </script>
+    <title>404 - Page Not Found</title>
+  </head>
+  <body
+    class="bg-primary font-hacker h-screen flex justify-center items-center text-center"
+  >
+    <div>
+      <!-- Main Heading -->
+      <h1 class="text-6xl font-bold animate-pulse text-red">Error 404</h1>
+      <!-- Subtext -->
+      <p class="text-lg mt-4 text-red animate-pulse">
+        <strong>Unauthorized Access Detected:</strong> The resource you
+        requested is unavailable.
+      </p>
+      <p class="text-md mt-2 opacity-80 text-red">
+        Your activity has been recorded and flagged for review.
+      </p>
+      <!-- Redirect Button -->
+      <a
+        href="/"
+        class="inline-block mt-6 px-6 py-2 text-lg font-bold text-primary bg-red rounded-full shadow-md hover:bg-green hover:text-black transition duration-300"
+      >
+        Return to Safe Zone
+      </a>
+    </div>
+  </body>
+</html>

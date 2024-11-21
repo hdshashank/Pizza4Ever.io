@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <link rel="icon" href="/favicon.png" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Congratulations</title>
+
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+      tailwind.config = {
+        theme: {
+          extend: {
+            colors: {
+              primary: "#03081D",
+              secondary: "#080e24",
+              tertiary: "#1E2231",
+              accent: "#60F9FE",
+              green: "#00FF88",
+              textcolor: "#949BA7",
+              flag: "#FFD700" /* Gold color for the flag */,
+            },
+            fontFamily: {
+              hacker: ["'Courier New'", "monospace"],
+            },
+          },
+        },
+      };
+    </script>
+  </head>
+  <body class="bg-primary font-hacker text-textcolor">
+    <!-- Main container -->
+    <div class="h-screen flex flex-col items-center justify-center">
+      <!-- Congratulations section -->
+      <div
+        class="text-center bg-secondary p-8 rounded-lg shadow-lg max-w-lg w-full"
+      >
+        <h1 class="text-4xl text-green font-bold mb-4">Congratulations!</h1>
+        <p class="text-xl text-accent mb-6">
+          You've won
+          <span class="text-green font-extrabold">Hacker Games!</span>
+        </p>
+        <p class="text-lg text-textcolor mb-4">
+          As a reward for your outstanding hacking skills, here is your flag:
+        </p>
+        <!-- Flag -->
+        <div
+          class="bg-primary text-flag font-extrabold py-3 px-6 rounded-lg shadow-lg text-2xl inline-block mb-6"
+        >
+          CSEH{you_are_a_master_hacker}
+        </div>
+        <p class="text-sm text-textcolor mb-6">Keep your flag safe!</p>
+
+        <!-- Logout Button -->
+        <button
+          onclick="logout()"
+          class="bg-accent text-primary font-bold py-2 px-6 rounded-full shadow-md hover:bg-green-500 transition duration-200"
+        >
+          Logout
+        </button>
+      </div>
+    </div>
+
+    <script>
+      // JavaScript to handle logout action (for now it just redirects to the login page)
+      function logout() {
+        // Redirecting to the login page after logout
+        window.location.href = "/"; // Change to the actual login URL
+      }
+    </script>
+  </body>
+</html>
